@@ -2,7 +2,9 @@ ipython access to the odyssey cluster
 
 TODO
 ------
-get pyzmq actually working on odyssey
+get pyzmq actually working on odyssey - had to use python2.7.1 and manually fix path
+odyssey profile working (not sure what ports/ips I need to define): ipcluster --profile=odyssey -n {nprocs}
+need to tunnel out the cluster connection
 test out launch nodes: see pbs notes in ipython doc
 sort out client/controller ssh tunneling
 make templates

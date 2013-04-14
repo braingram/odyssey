@@ -1,0 +1,35 @@
+ipython access to the odyssey cluster
+
+TODO
+------
+get pyzmq actually working on odyssey
+test out launch nodes: see pbs notes in ipython doc
+sort out client/controller ssh tunneling
+make templates
+code & test
+
+Basic Structure
+------
+
+host : your computer (where ipython terminal/notebook is running)
+    must be ssh accessible from each odyssey node
+    and able to ssh into the head node
+head node : odyssey login node
+node(s) : odyssey compute node
+
+1) negotiate ssh connection with head node
+2) copy over (or create) job scripts that:
+    A) fetch ipython security info (do this on head node?)
+    B) ssh tunnel from nodes to host
+    C) start up an ipengine
+3) start a ipcontroller on host (that connects to the node ipengines)
+
+alternate (possibly easier)
+1) negotiate ssh connection with head node
+2) launch controller & engines on cluster
+3) have controller scp data to host
+4) go ahead and separately launch clients
+
+Needs
+------
+killing of specific & all nodes
